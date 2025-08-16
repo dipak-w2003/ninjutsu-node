@@ -1,0 +1,191 @@
+[
+  {
+    "entity": "User",
+    "apis": [
+      {
+        "name": "Create User",
+        "method": "POST",
+        "url": "/api/user",
+        "body": {}
+      },
+      {
+        "name": "Get User",
+        "method": "GET",
+        "url": "/api/user/:id"
+      },
+      {
+        "name": "Update User",
+        "method": "PUT",
+        "url": "/api/user/:id",
+        "body": {}
+      },
+      {
+        "name": "Delete User",
+        "method": "DELETE",
+        "url": "/api/user/:id"
+      }
+    ]
+  },
+  {
+    "entity": "Institute",
+    "apis": [
+      {
+        "name": "Create Institute",
+        "method": "POST",
+        "url": "/api/institute",
+        "body": {}
+      },
+      {
+        "name": "Get Institute",
+        "method": "GET",
+        "url": "/api/institute/:id"
+      },
+      {
+        "name": "Update Institute",
+        "method": "PUT",
+        "url": "/api/institute/:id",
+        "body": {}
+      },
+      {
+        "name": "Delete Institute",
+        "method": "DELETE",
+        "url": "/api/institute/:id"
+      }
+    ]
+  },
+  {
+    "entity": "Teacher",
+    "apis": [
+      {
+        "name": "Create Teacher",
+        "method": "POST",
+        "url": "/api/teacher",
+        "body": {}
+      },
+      {
+        "name": "Get Teacher",
+        "method": "GET",
+        "url": "/api/teacher/:id"
+      },
+      {
+        "name": "Update Teacher",
+        "method": "PUT",
+        "url": "/api/teacher/:id",
+        "body": {}
+      },
+      {
+        "name": "Delete Teacher",
+        "method": "DELETE",
+        "url": "/api/teacher/:id"
+      }
+    ]
+  },
+  {
+    "entity": "Student",
+    "apis": [
+      {
+        "name": "Create Student",
+        "method": "POST",
+        "url": "/api/student",
+        "body": {}
+      },
+      {
+        "name": "Get Student",
+        "method": "GET",
+        "url": "/api/student/:id"
+      },
+      {
+        "name": "Update Student",
+        "method": "PUT",
+        "url": "/api/student/:id",
+        "body": {}
+      },
+      {
+        "name": "Delete Student",
+        "method": "DELETE",
+        "url": "/api/student/:id"
+      }
+    ]
+  },
+  {
+    "entity": "Course",
+    "apis": [
+      {
+        "name": "Create Course",
+        "method": "POST",
+        "url": "/api/course",
+        "body": {}
+      },
+      {
+        "name": "Get Course",
+        "method": "GET",
+        "url": "/api/course/:id"
+      },
+      {
+        "name": "Update Course",
+        "method": "PUT",
+        "url": "/api/course/:id",
+        "body": {}
+      },
+      {
+        "name": "Delete Course",
+        "method": "DELETE",
+        "url": "/api/course/:id"
+      }
+    ]
+  },
+  {
+    "entity": "Cart",
+    "apis": [
+      {
+        "name": "Add to Cart",
+        "method": "POST",
+        "url": "/api/cart",
+        "body": {}
+      },
+      {
+        "name": "Get Cart",
+        "method": "GET",
+        "url": "/api/cart/:id"
+      },
+      {
+        "name": "Update Cart",
+        "method": "PUT",
+        "url": "/api/cart/:id",
+        "body": {}
+      },
+      {
+        "name": "Delete Cart",
+        "method": "DELETE",
+        "url": "/api/cart/:id"
+      }
+    ]
+  },
+  {
+    "entity": "Order",
+    "apis": [
+      {
+        "name": "Create Order",
+        "method": "POST",
+        "url": "/api/order",
+        "body": {}
+      },
+      {
+        "name": "Get Order",
+        "method": "GET",
+        "url": "/api/order/:id"
+      },
+      {
+        "name": "Update Order",
+        "method": "PUT",
+        "url": "/api/order/:id",
+        "body": {}
+      },
+      {
+        "name": "Delete Order",
+        "method": "DELETE",
+        "url": "/api/order/:id"
+      }
+    ]
+  }
+]
