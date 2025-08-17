@@ -175,6 +175,7 @@ async function main() {
       if (url === "/auth/login" && response.data?.data?.token) {
         storeToken(response.data.data);
       }
+      console.log("content type", axiosInstance.defaults.headers["Content-Type"]);
 
       console.log(chalk.green("✅ API Response:"), response.data);
     } catch (err) {
