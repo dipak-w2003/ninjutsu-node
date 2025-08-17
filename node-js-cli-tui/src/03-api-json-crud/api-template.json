@@ -5,24 +5,33 @@
       {
         "name": "Create User",
         "method": "POST",
-        "url": "/api/user",
-        "body": {}
+        "url": "/auth/register",
+        "isTokenNeed": true,
+        "body": {
+          "username": "",
+          "email": "",
+          "password": ""
+        }
       },
       {
-        "name": "Get User",
-        "method": "GET",
-        "url": "/api/user/:id"
+        "name": "Get Users",
+        "method": "POST",
+        "url": "/auth/login"
       },
       {
-        "name": "Update User",
-        "method": "PUT",
-        "url": "/api/user/:id",
-        "body": {}
+        "name": "Get Login",
+        "method": "POST",
+        "url": "/auth/login",
+        "isTokenNeed": true,
+        "body": {
+          "email": "",
+          "password": ""
+        }
       },
       {
         "name": "Delete User",
         "method": "DELETE",
-        "url": "/api/user/:id"
+        "url": "/auth/user/:id"
       }
     ]
   },
@@ -33,7 +42,10 @@
         "name": "Create Institute",
         "method": "POST",
         "url": "/api/institute",
-        "body": {}
+        "isTokenNeed": true,
+        "body": {
+          "instituteName": ""
+        }
       },
       {
         "name": "Get Institute",
@@ -44,6 +56,7 @@
         "name": "Update Institute",
         "method": "PUT",
         "url": "/api/institute/:id",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -60,6 +73,7 @@
         "name": "Create Teacher",
         "method": "POST",
         "url": "/api/teacher",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -71,6 +85,7 @@
         "name": "Update Teacher",
         "method": "PUT",
         "url": "/api/teacher/:id",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -87,6 +102,7 @@
         "name": "Create Student",
         "method": "POST",
         "url": "/api/student",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -98,6 +114,7 @@
         "name": "Update Student",
         "method": "PUT",
         "url": "/api/student/:id",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -114,6 +131,7 @@
         "name": "Create Course",
         "method": "POST",
         "url": "/api/course",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -125,6 +143,7 @@
         "name": "Update Course",
         "method": "PUT",
         "url": "/api/course/:id",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -141,6 +160,7 @@
         "name": "Add to Cart",
         "method": "POST",
         "url": "/api/cart",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -152,6 +172,7 @@
         "name": "Update Cart",
         "method": "PUT",
         "url": "/api/cart/:id",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -168,6 +189,7 @@
         "name": "Create Order",
         "method": "POST",
         "url": "/api/order",
+        "isTokenNeed": true,
         "body": {}
       },
       {
@@ -179,6 +201,7 @@
         "name": "Update Order",
         "method": "PUT",
         "url": "/api/order/:id",
+        "isTokenNeed": true,
         "body": {}
       },
       {
