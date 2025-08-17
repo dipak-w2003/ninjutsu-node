@@ -151,5 +151,38 @@
         "body": {}
       }
     ]
+  },
+  {
+    "entity": "Institute Student",
+    "apis": [
+      {
+        "name": "Create Institute Course Category",
+        "method": "POST",
+        "url": "/institute/student",
+        "isToken": true,
+        "body": {
+          "studentName": "",
+          "studentEmail": "",
+          "studentPhoneNumber": "",
+          "studentAddress": "",
+          "enrolledDate": "",
+          "studentImage": ""
+        }
+      },
+      {
+        "method": "GET",
+        "name": "Get Institute Course Categories",
+        "url": "/institute/student",
+        "isToken": true,
+        "body": {}
+      },
+      {
+        "name": "Delete Institute Course Category",
+        "method": "DELETE",
+        "url": "/institute/student/",
+        "isToken": true,
+        "body": {}
+      }
+    ]
   }
 ]
