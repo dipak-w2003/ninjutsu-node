@@ -91,7 +91,13 @@ async function getBodyData(api) {
       const { value } = await inquirer.prompt([
         { type: "input", name: "value", message: `${key}:` },
       ]);
-      bodyData[key] = value;
+      // if input is an existing file path → treat as file
+      // So check path as files path if exist treat as upload file
+      if (fs.existsSync(value)) {
+        bodyData[key] = fs.createReadStream(value);
+      } else {
+        bodyData[key] = value;
+      }
     }
   }
   return bodyData;
