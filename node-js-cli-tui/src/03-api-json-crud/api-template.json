@@ -6,7 +6,7 @@
         "name": "Create User",
         "method": "POST",
         "url": "/auth/register",
-        "isTokenNeed": true,
+        "isToken": true,
         "body": {
           "username": "",
           "email": "",
@@ -22,7 +22,7 @@
         "name": "Get Login",
         "method": "POST",
         "url": "/auth/login",
-        "isTokenNeed": true,
+        "isToken": true,
         "body": {
           "email": "",
           "password": ""
@@ -31,7 +31,7 @@
       {
         "name": "Delete User",
         "method": "DELETE",
-        "url": "/auth/user/:id"
+        "url": "/auth/user/"
       }
     ]
   },
@@ -41,173 +41,114 @@
       {
         "name": "Create Institute",
         "method": "POST",
-        "url": "/api/institute",
-        "isTokenNeed": true,
+        "url": "/institute",
+        "isToken": true,
         "body": {
-          "instituteName": ""
+          "instituteName": "",
+          "instituteEmail": "",
+          "institutePhoneNumber": "",
+          "instituteAddress": "",
+          "institutePanNo": "",
+          "instituteVatNo": ""
+        }
+      }
+    ]
+  },
+  {
+    "entity": "Institute Teacher",
+    "apis": [
+      {
+        "name": "Create Institute Teacher",
+        "method": "POST",
+        "url": "/institute/teacher",
+        "isToken": true,
+        "body": {
+          "teacherName": "",
+          "teacherEmail": "",
+          "teacherPhoneNumber": "",
+          "teacherExperience": "",
+          "teacherJoinedDate": "",
+          "teacherSalary": "",
+          "teacherPhoto": "",
+          "courseId": ""
         }
       },
       {
-        "name": "Get Institute",
+        "name": "Get Institute Teacher",
         "method": "GET",
-        "url": "/api/institute/:id"
-      },
-      {
-        "name": "Update Institute",
-        "method": "PUT",
-        "url": "/api/institute/:id",
-        "isTokenNeed": true,
+        "url": "/institute/teacher",
+        "isToken": true,
         "body": {}
       },
       {
-        "name": "Delete Institute",
+        "name": "Delete Institute Teacher",
         "method": "DELETE",
-        "url": "/api/institute/:id"
+        "url": "/institute/teacher/",
+        "isToken": true,
+        "body": {}
       }
     ]
   },
   {
-    "entity": "Teacher",
+    "entity": "Institute Course ",
     "apis": [
       {
-        "name": "Create Teacher",
+        "name": "Create Institute Course ",
         "method": "POST",
-        "url": "/api/teacher",
-        "isTokenNeed": true,
-        "body": {}
+        "url": "/institute/course",
+        "isToken": true,
+        "body": {
+          "courseName": "",
+          "coursePrice": "",
+          "courseDuration": "",
+          "courseLevel": "",
+          "courseDescription": "",
+          "categoryId": "",
+          "courseThumbnail": ""
+        }
       },
       {
-        "name": "Get Teacher",
+        "name": "Get Institute Course",
         "method": "GET",
-        "url": "/api/teacher/:id"
-      },
-      {
-        "name": "Update Teacher",
-        "method": "PUT",
-        "url": "/api/teacher/:id",
-        "isTokenNeed": true,
+        "url": "/institute/course",
+        "isToken": true,
         "body": {}
       },
       {
-        "name": "Delete Teacher",
+        "name": "Delete Institute Course",
         "method": "DELETE",
-        "url": "/api/teacher/:id"
+        "url": "/institute/course/",
+        "isToken": true,
+        "body": {}
       }
     ]
   },
   {
-    "entity": "Student",
+    "entity": "Institute Course Category",
     "apis": [
       {
-        "name": "Create Student",
+        "name": "Create Institute Course Category",
         "method": "POST",
-        "url": "/api/student",
-        "isTokenNeed": true,
-        "body": {}
+        "url": "/institute/category",
+        "isToken": true,
+        "body": {
+          "categoryName": "",
+          "categoryDescription": ""
+        }
       },
       {
-        "name": "Get Student",
+        "name": "Get Institute Course Categories",
         "method": "GET",
-        "url": "/api/student/:id"
-      },
-      {
-        "name": "Update Student",
-        "method": "PUT",
-        "url": "/api/student/:id",
-        "isTokenNeed": true,
+        "url": "/institute/category",
+        "isToken": true,
         "body": {}
       },
       {
-        "name": "Delete Student",
+        "name": "Delete Institute Course Category",
         "method": "DELETE",
-        "url": "/api/student/:id"
-      }
-    ]
-  },
-  {
-    "entity": "Course",
-    "apis": [
-      {
-        "name": "Create Course",
-        "method": "POST",
-        "url": "/api/course",
-        "isTokenNeed": true,
+        "url": "/institute/category/",
+        "isToken": true,
         "body": {}
-      },
-      {
-        "name": "Get Course",
-        "method": "GET",
-        "url": "/api/course/:id"
-      },
-      {
-        "name": "Update Course",
-        "method": "PUT",
-        "url": "/api/course/:id",
-        "isTokenNeed": true,
-        "body": {}
-      },
-      {
-        "name": "Delete Course",
-        "method": "DELETE",
-        "url": "/api/course/:id"
-      }
-    ]
-  },
-  {
-    "entity": "Cart",
-    "apis": [
-      {
-        "name": "Add to Cart",
-        "method": "POST",
-        "url": "/api/cart",
-        "isTokenNeed": true,
-        "body": {}
-      },
-      {
-        "name": "Get Cart",
-        "method": "GET",
-        "url": "/api/cart/:id"
-      },
-      {
-        "name": "Update Cart",
-        "method": "PUT",
-        "url": "/api/cart/:id",
-        "isTokenNeed": true,
-        "body": {}
-      },
-      {
-        "name": "Delete Cart",
-        "method": "DELETE",
-        "url": "/api/cart/:id"
-      }
-    ]
-  },
-  {
-    "entity": "Order",
-    "apis": [
-      {
-        "name": "Create Order",
-        "method": "POST",
-        "url": "/api/order",
-        "isTokenNeed": true,
-        "body": {}
-      },
-      {
-        "name": "Get Order",
-        "method": "GET",
-        "url": "/api/order/:id"
-      },
-      {
-        "name": "Update Order",
-        "method": "PUT",
-        "url": "/api/order/:id",
-        "isTokenNeed": true,
-        "body": {}
-      },
-      {
-        "name": "Delete Order",
-        "method": "DELETE",
-        "url": "/api/order/:id"
       }
     ]
   }
