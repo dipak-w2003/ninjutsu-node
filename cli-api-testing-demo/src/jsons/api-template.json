@@ -1,0 +1,183 @@
+[
+  {
+    "entity": "User",
+    "apis": [
+      {
+        "name": "Create User",
+        "method": "POST",
+        "url": "/auth/register",
+        "isToken": true,
+        "body": {
+          "username": "",
+          "email": "",
+          "password": ""
+        }
+      },
+      {
+        "name": "Get Users",
+        "method": "POST",
+        "url": "/auth/login"
+      },
+      {
+        "name": "Get Login",
+        "method": "POST",
+        "url": "/auth/login",
+        "isToken": true,
+        "body": {
+          "email": "",
+          "password": ""
+        }
+      }
+    ]
+  },
+  {
+    "entity": "Institute",
+    "apis": [
+      {
+        "name": "Create Institute",
+        "method": "POST",
+        "url": "/institute",
+        "isToken": true,
+        "body": {
+          "instituteName": "",
+          "instituteEmail": "",
+          "institutePhoneNumber": "",
+          "instituteAddress": "",
+          "institutePanNo": "",
+          "instituteVatNo": ""
+        }
+      }
+    ]
+  },
+  {
+    "entity": "Institute Teacher",
+    "apis": [
+      {
+        "name": "Create Institute Teacher",
+        "method": "POST",
+        "url": "/institute/teacher",
+        "isToken": true,
+        "body": {
+          "teacherName": "",
+          "teacherEmail": "",
+          "teacherPhoneNumber": "",
+          "teacherExperience": "",
+          "teacherJoinedDate": "",
+          "teacherSalary": "",
+          "teacherPhoto": "",
+          "courseId": ""
+        }
+      },
+      {
+        "name": "Get Institute Teacher",
+        "method": "GET",
+        "url": "/institute/teacher",
+        "isToken": true,
+        "body": {}
+      },
+      {
+        "name": "Delete Institute Teacher",
+        "method": "DELETE",
+        "url": "/institute/teacher/",
+        "isToken": true,
+        "body": {}
+      }
+    ]
+  },
+  {
+    "entity": "Institute Course ",
+    "apis": [
+      {
+        "name": "Create Institute Course ",
+        "method": "POST",
+        "url": "/institute/course",
+        "isToken": true,
+        "body": {
+          "courseName": "",
+          "coursePrice": "",
+          "courseDuration": "",
+          "courseLevel": "",
+          "courseDescription": "",
+          "categoryId": "",
+          "courseThumbnail": ""
+        }
+      },
+      {
+        "name": "Get Institute Course",
+        "method": "GET",
+        "url": "/institute/course",
+        "isToken": true,
+        "body": {}
+      },
+      {
+        "name": "Delete Institute Course",
+        "method": "DELETE",
+        "url": "/institute/course/",
+        "isToken": true,
+        "body": {}
+      }
+    ]
+  },
+  {
+    "entity": "Institute Course Category",
+    "apis": [
+      {
+        "name": "Create Institute Course Category",
+        "method": "POST",
+        "url": "/institute/category",
+        "isToken": true,
+        "body": {
+          "categoryName": "",
+          "categoryDescription": ""
+        }
+      },
+      {
+        "name": "Get Institute Course Categories",
+        "method": "GET",
+        "url": "/institute/category",
+        "isToken": true,
+        "body": {}
+      },
+      {
+        "name": "Delete Institute Course Category",
+        "method": "DELETE",
+        "url": "/institute/category/",
+        "isToken": true,
+        "body": {}
+      }
+    ]
+  },
+  {
+    "entity": "Institute Student",
+    "apis": [
+      {
+        "name": "Create Institute Course Category",
+        "method": "POST",
+        "url": "/institute/student",
+        "isToken": true,
+        "body": {
+          "studentName": "",
+          "studentEmail": "",
+          "studentPhoneNumber": "",
+          "studentAddress": "",
+          "enrolledDate": "",
+          "studentImage": ""
+        }
+      },
+      {
+        "method": "GET",
+        "name": "Get Institute Course Categories",
+        "url": "/institute/student",
+        "isToken": true,
+        "body": {}
+      },
+      {
+        "name": "Delete Institute Course Category",
+        "method": "DELETE",
+        "url": "/institute/student/",
+        "isToken": true,
+        "body": {}
+      }
+    ]
+  }
+]

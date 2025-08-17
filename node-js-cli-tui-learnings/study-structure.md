@@ -1,4 +1,4 @@
-api-testing-cli/
+```api-testing-cli/
 │
 ├── 00-setup/                    # Hour 0–1: Environment setup & CLI basics
 │   └── index.js                  # Print banner, colored console logs
@@ -41,3 +41,4 @@ api-testing-cli/
 │
 └── package.json                  # Project dependencies & scripts
 
+```
