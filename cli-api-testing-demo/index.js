@@ -104,6 +104,29 @@ async function getBodyData(api) {
   }
   return bodyData;
 }
+// --------------------
+// Collect Param data if required
+// --------------------
+async function getParamData(api) {
+  // For now i guess we don't accepts multiple params as once
+  // so for simplicity i will handling single param only
+
+  const collectParam = Object.keys(api.isParams.params)
+  let paramData = "";
+  if (collectParam.length > 1) {
+    console.log(chalk.red("multiple Param Registered at API json >> isParams invalid"));
+    return 0
+  }
+  if (api.isParams && collectParam.length > 0) {
+    for (let key of collectParam) {
+      const { value } = await inquirer.prompt([{ type: "input", name: "value", message: `${key}:` }]);
+      paramData = value;
+    }
+  }
+  console.log(paramData)
+  return paramData;
+}
+
 
 // --------------------
 // Main CLI loop
@@ -117,8 +140,10 @@ async function main() {
     const api = await selectApi(entity);
     if (!api) continue; // back to entity selection
 
-    // Step 3: Collect body data
+    // Step 3: Collect body | params data
     const bodyData = await getBodyData(api);
+
+
 
     // Step 4: Show request summary
     console.log("\n🚀 Final Request:");
@@ -137,6 +162,7 @@ async function main() {
     }
 
     try {
+      // Container : Store Manualy API Route Which Needs to transfer data as not normal textual json rather than as form-data
       const isFormDataAPI = [
         "/institute/teacher",
         "/institute/course",
@@ -145,7 +171,8 @@ async function main() {
         "/course",
         "/student",
       ];
-
+      // Condition : if API[] contains isToken as true & loginsJSON has token key
+      // SO change axios headers file ; Authorization & Content-Type
       if (api.isToken && loginsJSON?.token) {
         axiosInstance.defaults.headers.common["Authorization"] = loginsJSON.token;
         axiosInstance.defaults.headers["Content-Type"] = isFormDataAPI.includes(api.url)
@@ -161,7 +188,10 @@ async function main() {
 
       if (method === "get") {
         response = await axiosInstance.get(url, { params: bodyData });
-      } else if (method === "delete") {
+      }
+
+      // Condition : Method Delete with just params
+      else if (method === "delete") {
         response = await axiosInstance.get(url);
         console.log(chalk.green("✅ API Response:"), response.data);
         const delId = await inquirer.prompt([
@@ -173,12 +203,29 @@ async function main() {
           },
         ]);
         response = await axiosInstance.delete(url + delId.delete);
-      } else if (["post", "put", "patch"].includes(method)) {
+      }
+
+      // Condition : If Method is Post & requires number of params
+      else if (["put", "post"].includes(method) && api.isParams) {
+        console.log("Checking POST & Param")
+        let paramData = await getParamData(api)
+        console.log("Param ", paramData)
+        // if middle param requires
+        let isMiddleParam = api.isParams.isMiddleSet
+        if (isMiddleParam) {
+          const joinedUrlWithParam = `${url}/${paramData}/${isMiddleParam[1]}`
+          response = await axiosInstance[method](joinedUrlWithParam, bodyData)
+        } else {
+          response = await axiosInstance[method](url, paramData)
+        }
+      }
+      // Condition : Simple Method without extra params just METHOD it 
+      else if (["post", "put", "patch"].includes(method)) {
         response = await axiosInstance[method](url, bodyData);
       } else {
         throw new Error(`Unsupported method: ${method}`);
       }
-
+      // Conditon : User Login & JSON Handling
       if (url === "/auth/login" && response.data?.data?.token) {
         storeToken(response.data.data);
       }

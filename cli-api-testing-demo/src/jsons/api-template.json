@@ -179,5 +179,47 @@
         "body": {}
       }
     ]
+  },{
+
+"entity" :"Teacher",
+    "apis":[
+      {
+        "name" : "Teacher Login",
+        "method" : "POST",
+        "url":"/teacher/login",
+        "isToken":true,
+        "body":{
+          "teacherEmail" :"",
+          "teacherPassword" :"",
+          "teacherInstituteNumber":""
+        }
+      }
+    ]
+  },
+  {
+  "entity" :"Teacher Course Chapters",
+    "apis":[
+      {
+        "name" : "Course Chapter Entry",
+        "method" : "POST",
+        "url":"/teacher/chapter",
+        "isToken":true,
+        "body":{
+          "chapterName" :"",
+          "chapterLevel" :"",
+          "chapterDuration":""
+        },
+      "isParams":{
+       "params":{
+            "courseId": ""
+          },
+          "isMiddleSet":[
+            "be-empty-it-for-middle-part",
+            "chapters/"
+          ]
+        }
+      }
+    ]
   }
+
 ]
